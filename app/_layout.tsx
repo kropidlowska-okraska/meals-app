@@ -1,12 +1,14 @@
-import { Stack } from 'expo-router';
+import { Stack } from "expo-router";
 
 export default function Layout() {
-  return (
-    <Stack
-      screenOptions={{
-        headerShown: false,
-      }}>
-      <Stack.Screen name="/" />
-    </Stack>
-  );
+	return (
+		<Stack
+			screenOptions={{
+				headerShown: false,
+				contentStyle: { backgroundColor: "#24180f" },
+			}}
+		>
+			<Stack.Screen name="/" />
+		</Stack>
+	);
 }

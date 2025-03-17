@@ -1,20 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList } from 'react-native';
+import CategoryGridTile from '../components/CategoryGridTile';
+import { CATEGORIES } from '../data/dummyData';
 
-export default function App() {
+type ItemData = {
+  item: {
+    id: string;
+    title: string;
+    color: string;
+  };
+};
+
+function renderCategoryItem(itemData: ItemData) {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <CategoryGridTile title={itemData.item.title} color={itemData.item.color} />
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+function CategoriesScreen() {
+  return (
+    <FlatList
+      data={CATEGORIES}
+      keyExtractor={(item) => item.id}
+      renderItem={renderCategoryItem}
+      numColumns={2}
+    />
+  );
+}
+
+export default CategoriesScreen;
