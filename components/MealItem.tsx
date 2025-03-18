@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import {
 	View,
 	Pressable,
@@ -13,6 +14,7 @@ type Props = {
 	duration: number;
 	complexity: string;
 	affordability: string;
+    onPress: () => void;
 };
 function MealItem({
 	title,
@@ -20,12 +22,14 @@ function MealItem({
 	duration,
 	complexity,
 	affordability,
+    onPress,
 }: Props) {
 	return (
 		<View style={styles.mealItem}>
 			<Pressable
 				android_ripple={{ color: "#ccc" }}
 				style={({ pressed }) => (pressed ? styles.buttonPressed : null)}
+                onPress={onPress}
 			>
 				<View style={styles.innerContainer}>
 					<View>

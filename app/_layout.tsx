@@ -28,6 +28,10 @@ export default function Layout() {
 						};
 					}}
 				/>
+				<Stack.Screen
+					name="[mealId]/meal-detail"
+					options={{ title: "Single meal" }}
+				/>
 			</Stack>
 		</>
 	);
