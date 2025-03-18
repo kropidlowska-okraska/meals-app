@@ -8,13 +8,13 @@ export default function Layout() {
 			<StatusBar style="light" />
 			<Stack
 				screenOptions={{
-                    headerStyle: { backgroundColor: "#24180f" },
+                    headerStyle: { backgroundColor: "#351401" },
                     headerTintColor: "white",
-                    contentStyle: { backgroundColor: "#24180f", paddingTop: Platform.OS === "ios" ? 16 : 32 },
+                    contentStyle: { backgroundColor: "#3f2f25", paddingTop: Platform.OS === "ios" ? 16 : 32 },
 				}}
 			>
-				<Stack.Screen name="index" />
-                <Stack.Screen name="[categoryId]/meals-overview" />
+				<Stack.Screen name="index" options={{title: "All categories"}} />
+                <Stack.Screen name="[categoryId]/meals-overview" options={{title: "Meals Overview"}}/>
 			</Stack>
 		</>
 	);
